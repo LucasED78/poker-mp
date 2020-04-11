@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Regular.ttf) format('ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Light.ttf) format('ttf');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Bold.ttf) format('ttf');
+  font-weight: bold;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+}
