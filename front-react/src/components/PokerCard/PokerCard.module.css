@@ -1,0 +1,6 @@
+.PokerCard {
+  width: 80px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 1s;
+}
