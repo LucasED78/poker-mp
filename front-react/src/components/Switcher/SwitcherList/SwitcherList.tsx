@@ -8,7 +8,7 @@ export interface SwitcherListProps {
 
 const SwitcherList = (props: SwitcherListProps) => {
   return (
-    <FlexRow>
+    <FlexRow style={{ margin: '50px 0' }}>
       <>
         <Switcher 
           switcherColor="navy" 

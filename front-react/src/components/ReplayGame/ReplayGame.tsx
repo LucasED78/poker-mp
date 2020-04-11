@@ -10,7 +10,7 @@ export interface ReplayGameProps {
 
 const ReplayGame = (props: ReplayGameProps) => {
   return (
-    <FlexColumn style={{ margin: '50px 0' }}>
+    <FlexColumn>
       <>
         <Paragraph content={ `${props.winner} is the winner!! Want to play again?` } />
 
