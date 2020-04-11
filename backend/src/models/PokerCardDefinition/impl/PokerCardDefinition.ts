@@ -1,11 +1,11 @@
 import IPokerCardDefinition from "../IPokerCardDefinition";
 import PokerSuits from "../../PokerSuits";
-import PokerCard from "../../PokerCard";
+import PokerCard from "../../PokerCard/PokerCard";
 
 class PokerCardDefinition implements IPokerCardDefinition<PokerSuits> {
   cards: string[][] = [
     ['c', 'h', 's', 'd'],
-    ['A', 'K', 'J', 'Q', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    ['A', 'K', 'J', 'Q', 'T', '2', '3', '4', '5', '6', '7', '8', '9']
   ]
 
   generate(): PokerSuits {

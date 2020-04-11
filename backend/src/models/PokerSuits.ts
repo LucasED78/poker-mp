@@ -1,4 +1,4 @@
-import IPokerCard from "./IPokerCard";
+import IPokerCard from "./PokerCard/IPokerCard";
 
 class PokerSuits {
   suits: IPokerCard[]
