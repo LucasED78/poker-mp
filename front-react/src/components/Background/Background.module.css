@@ -1,0 +1,8 @@
+.Background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-size: cover;
+  filter: blur(8px);  
+  transform: scale(1.2);
+}

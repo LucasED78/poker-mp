@@ -9,6 +9,7 @@ import PokerRepository from './core/repository/impl/PokerRepository';
 import ReplayGame from './components/ReplayGame/ReplayGame';
 import Button from './components/Button/Button';
 import Loading from './components/Loading/Loading';
+import Background from './components/Background/Background';
 
 const App = () => {
   const pokerRepository = new PokerRepository(new PokerHttp());
@@ -99,13 +100,16 @@ const App = () => {
   }
 
   return (
-    <Content>
-      <PokerTable>
-        {
-          loading ? renderLoading() : (player1 && player2) ? renderPlayerCards() : renderSwitcher()
-        }
-      </PokerTable>
-    </Content>
+    <>
+      <Background url="../../assets/poker-bg" />
+      <Content>
+        <PokerTable>
+          {
+            loading ? renderLoading() : (player1 && player2) ? renderPlayerCards() : renderSwitcher()
+          }
+        </PokerTable>
+      </Content>
+    </>
   )
 };
 
