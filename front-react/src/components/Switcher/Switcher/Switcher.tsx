@@ -1,5 +1,6 @@
 import React, { MouseEvent } from 'react';
 import classes from './Switcher.module.css';
+import Paragraph from '../../Paragraph/Paragraph';
 
 export interface SwitcherProps {
   switcherColor: string;
@@ -15,7 +16,7 @@ const Switcher = (props: SwitcherProps) => {
         style={{ backgroundColor: props.switcherColor }}
         onClick={props.onColorSelected}></span>
         
-      <p className={classes.Switcher__label}>{ props.switcherLabel }</p>
+      <Paragraph content={props.switcherLabel}/>
     </div>
   )
 }

@@ -9,6 +9,7 @@
   border-radius: 100%;
   cursor: pointer;
   transition: transform .5s;
+  margin: 0 10px;
 }
 
 .Switcher__color:hover { transform: scale(1.1); }
