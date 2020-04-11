@@ -1,0 +1,12 @@
+.PokerTable {
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  background-color: #5DB779;
+  border-radius: 300px;
+  border: 50px solid #363636;
+}
