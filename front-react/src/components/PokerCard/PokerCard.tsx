@@ -7,10 +7,13 @@ export interface PokerCardProps {
   backColor: string;
   cardName?: string;
   flip?: boolean;
+  flipAll?: boolean;
 }
 
 const PokerCard = (props: PokerCardProps) => {
-  const img = require(`../../assets/card-${props.backColor}.png`).default;
+  const cardName = ImageUtil.getCardImage(props.cardName ?? '');
+  const img = !props.flipAll ? require(`../../assets/card-${props.backColor}.png`).default 
+  : require(`../../assets/suits/${cardName}.png`).default
 
   const onClickHandler = (e: MouseEvent<HTMLImageElement, globalThis.MouseEvent>) => {
     const { currentTarget: element } = e;
