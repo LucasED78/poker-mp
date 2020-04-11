@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "poker-evaluator": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/poker-evaluator": "^0.3.2",
+    "typescript": "^3.8.3"
+  }
+}
