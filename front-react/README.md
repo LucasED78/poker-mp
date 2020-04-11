@@ -4,7 +4,7 @@ A simple poker game that generates two random hands of poker and shows up the wi
 
 # Starting
 
-Clone the repository and go to the front-react page, then install all the dependencies needed for the app run.
+Clone the repository and then install all the dependencies needed for the app run.
 
 ## Requisites
 
