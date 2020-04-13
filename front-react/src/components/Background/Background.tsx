@@ -1,15 +1,16 @@
 import React from 'react';
 import classes from './Background.module.css';
-import img from '../../assets/poker-bg.jpg';
 
 export interface BackgroundProps {
   img: string;
 }
 
 const Background = (props: BackgroundProps) => {
+  const img = props.img ? require('../../assets/poker-bg.jpg').default : require('../../assets/poker-bg.jpg').default;
+  
   return (
     <div 
-    style={{backgroundImage: `url(${props.img || img})`}}
+    style={{backgroundImage: `url(${img})`}}
     className={classes.Background}></div>
   )
 }

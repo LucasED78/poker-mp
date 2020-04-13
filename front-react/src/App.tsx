@@ -10,6 +10,8 @@ import ReplayGame from './components/ReplayGame/ReplayGame';
 import Button from './components/Button/Button';
 import Loading from './components/Loading/Loading';
 import Background from './components/Background/Background';
+import 'react-toastify/dist/ReactToastify.min.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   const pokerRepository = new PokerRepository(new PokerHttp());
@@ -23,27 +25,45 @@ const App = () => {
   const fetchPlayerCards = async () => {
     setLoading(true);
 
-    const response = await pokerRepository.fetchPlayerCards();
+    try {
+      const response = await pokerRepository.fetchPlayerCards();
 
-    const { player1, player2 } = response.data;
+      const { player1, player2 } = response.data;
 
-    setPlayer1(Player.fromJSON(player1));
-    setPlayer2(Player.fromJSON(player2));
+      setPlayer1(Player.fromJSON(player1));
+      setPlayer2(Player.fromJSON(player2));
 
-    setLoading(false);
+      setLoading(false);
+    }catch({ message }){
+      setLoading(false);
+      toast.error(message)
+    }
   }
 
   const fetchWinnerPlayer = async () => {
     if (player1 && player2) {
       setLoading(true);
 
-      const response = await pokerRepository.fetchWinner([player1?.handInformation, player2?.handInformation]);
+      try {
+        const response = await pokerRepository.fetchWinner([player1?.handInformation, player2?.handInformation]);
 
-      const { winner } = response.data;
+        const { winner } = response.data;
 
-      setWinner(winner)
-      
-      setLoading(false);
+        setWinner(winner)
+        
+        setLoading(false);
+
+        const { handName, value } = player1.handInformation;
+        const { handName: p2HandName, value: p2Value } = player2.handInformation;
+
+        toast.success(
+          `The ${winner} is the winner, with a ${handName} and hand-value of ${value} over a
+          ${p2HandName} with hand-value of ${p2Value}`
+        );
+      }catch({ message }){
+        setLoading(false);
+        toast.error(message);
+      }
     }
   }
 
@@ -101,7 +121,8 @@ const App = () => {
 
   return (
     <>
-      <Background url="../../assets/poker-bg" />
+      <ToastContainer className="toast-container" toastClassName="dark-toast" />
+      <Background img="../../assets/poker-bg.jpg" />
       <Content>
         <PokerTable>
           {

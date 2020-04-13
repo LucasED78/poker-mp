@@ -2,6 +2,7 @@ import IPokerRepository from "../IPokerRepository";
 import PokerHttpResponseImpl from "../../http/impl/PokerHttpResponseImpl";
 import HandInformation from "../../models/HandInformation";
 import IPokerHttp from "../../http/IPokerHttp";
+import PokerHttpErrorImpl from "../../http/impl/PokerHttpErrorImpl";
 
 class PokerRepository implements IPokerRepository {
   pokerHttp: IPokerHttp<PokerHttpResponseImpl>;
@@ -11,11 +12,19 @@ class PokerRepository implements IPokerRepository {
   }
 
   fetchPlayerCards = async (): Promise<PokerHttpResponseImpl> => {
-    return await this.pokerHttp.get('/poker');
+    try {
+      return await this.pokerHttp.get('/poker');
+    } catch(e){
+      throw new PokerHttpErrorImpl('Sorry, an error ocurred when trying to fetch the player hands');
+    }
   }
 
   fetchWinner = async (handInformation: HandInformation[]): Promise<PokerHttpResponseImpl> => {
-    return await this.pokerHttp.post('/poker/winner', handInformation);
+    try {
+      return await this.pokerHttp.post('/poker/winner', handInformation);
+    } catch(e){
+      throw new PokerHttpErrorImpl('Sorry, an error ocurred when trying to fetch the winner hand');
+    }
   }
   
 }
