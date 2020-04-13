@@ -6,3 +6,16 @@
 }
 
 .PokerCard:hover { box-shadow: 0px 0px 8px lightgrey; }
+
+
+@media (max-width: 650px) {
+  .PokerCard {
+    width: 60px;
+  }
+}
+
+@media (max-width: 450px) {
+  .PokerCard {
+    width: 40px;
+  }
+}

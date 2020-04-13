@@ -69,6 +69,7 @@ const App = () => {
 
   const replayButtonHandler = () => {
     setWinner('');
+    toast.dismiss();
     fetchPlayerCards();
   }
 

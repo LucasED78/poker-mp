@@ -1,5 +1,5 @@
 .PokerTable {
-  width: 60vw;
+  width: 80vw;
   height: 80vh;
   position: relative;
   display: flex;
@@ -10,4 +10,11 @@
   background-color: #5DB779;
   border-radius: 300px;
   border: 50px solid #363636;
+}
+
+@media (max-width: 800px) {
+  .PokerTable {
+    width: 100vw;
+    height: 100vh;
+  }
 }

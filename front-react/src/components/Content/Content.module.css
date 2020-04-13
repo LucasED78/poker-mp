@@ -1,9 +1,15 @@
 .Content {
-  width: 1200px;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   z-index: 20;
+}
+
+@media (max-width: 430px) {
+  .Content {
+    width: 100vw;
+  }
 }
