@@ -10,7 +10,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon: './public/favicon.ico',
     })
   ],
   module: {
@@ -38,7 +39,7 @@ module.exports = {
       {
         test: /\.(png|jpg|ttf)$/,
         use: 'url-loader'
-      }
+      },
     ]
   },
   resolve: {
