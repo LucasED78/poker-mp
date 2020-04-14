@@ -25,3 +25,59 @@ body {
   font-family: Roboto;
   font-weight: 500;
 }
+
+.fadeInUp { animation: fadeInUp .8s eas; }
+
+.fadeInDown { animation: fadeInDown .8s; }
+
+.fadeInLeft { animation: fadeInLeft .5s; }
+
+.fadeInRight { animation: fadeInRight .5s; }
+
+@keyframes fadeInUp {
+  from {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    visibility: hidden;
+    transform: translate3d(-9999vw, 0, 0);
+  }
+
+  to {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    visibility: hidden;
+    transform: translate3d(0, -9999vh, 0);
+  }
+
+  to {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    visibility: hidden;
+    transform: translate3d(9999vw, 0, 0);
+  }
+
+  to {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}

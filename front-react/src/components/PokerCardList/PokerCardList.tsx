@@ -1,4 +1,4 @@
-import React, { CSSProperties, Component } from 'react';
+import React, { CSSProperties, Component, HTMLAttributes } from 'react';
 import classes from './PokerCardList.module.css';
 import PokerCard from '../PokerCard/PokerCard';
 import Paragraph from '../Paragraph/Paragraph';
@@ -10,7 +10,8 @@ export interface PokerCardList {
   cardColor: string;
   style?: CSSProperties;
   flip?: boolean;
-  flipAll?: boolean
+  flipAll?: boolean;
+  className?: string;
 }
 
 const PokerCardList = (props: PokerCardList) => {
@@ -19,7 +20,7 @@ const PokerCardList = (props: PokerCardList) => {
       <>
         <Paragraph horizontalSpace='5px' verticalSpace="10px" content={props.player} />
         
-        <div className={classes.PokerCardList} style={props.style}>
+        <div className={[classes.PokerCardList, props.className ?? ''].join(' ')} style={props.style}>
           { props.cards && 
             props.cards.map(e => <PokerCard 
               key={`${e} ${Math.random()}`} 

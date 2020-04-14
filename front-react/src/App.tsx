@@ -12,6 +12,7 @@ import Loading from './components/Loading/Loading';
 import Background from './components/Background/Background';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { fadeInLeft, fadeInRight } from './global.css';
 
 const App = () => {
   const pokerRepository = new PokerRepository(new PokerHttp());
@@ -94,6 +95,7 @@ const App = () => {
         {
           player2 &&  (
             <PokerCardList 
+              className={fadeInLeft}
               player='PLAYER 2'
               cardColor={player1Color == 'grey' ? 'navy' : 'grey'} 
               flipAll={winner.length > 0} 
@@ -109,6 +111,7 @@ const App = () => {
         {
           player1 && (
             <PokerCardList
+              className={fadeInRight}
               player='PLAYER 1' 
               cardColor={player1Color} 
               flip={winner.length == 0} 
